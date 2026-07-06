@@ -311,12 +311,12 @@
             margin-top: 40px;
         }
 
-        /* MOLDURAS SMARTPHONE COMPACTAS (Para aumento de Nitidez Pixel-a-Pixel) */
+        /* MOLDURAS SMARTPHONE ULTRA SHARP */
         .phone-frame {
-            width: 240px; /* Reduzido para focar a resolução nos textos menores */
-            height: 490px; /* Proporção ideal de escala */
-            background: #121212; /* Cor exata de fundo do aplicativo Sinosom */
-            border: 8px solid #1c2635; /* Bezel Metálico Fino */
+            width: 240px;
+            height: 490px;
+            background: #121212;
+            border: 8px solid #1c2635;
             border-radius: 32px;
             overflow: hidden;
             position: relative;
@@ -346,28 +346,22 @@
             z-index: 10;
         }
 
-        /* RENDERIZADOR DE TEXTO ULTRA-CRISP COM NITIDEZ ARTIFICIAL (SHARPENING) */
+        /* RENDERIZADOR DE TEXTO ULTRA-CRISP COM NITIDEZ ARTIFICIAL */
         .phone-frame img {
-            width: 92%; /* Reduz ligeiramente a imagem interna para alinhar perfeitamente os subpixels */
+            width: 92%;
             height: 92%;
-            object-fit: contain; /* Impede qualquer estiramento que cause desfoque no texto */
+            object-fit: contain;
             background-color: #121212;
-            border-radius: 20px; /* Bordas arredondadas internas idênticas à tela de um celular real */
+            border-radius: 20px;
             position: absolute;
             z-index: 5;
-            
-            /* Força renderização direta via placa de vídeo (Hardware Accelerated) */
             transform: translateZ(0);
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
-            
-            /* Algoritmos de anti-aliasing focados em contraste e leitura de letras pequenas */
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
             image-rendering: -moz-crisp-edges;
             image-rendering: auto;
-            
-            /* Filtros de Contraste e Nitidez Ativa para destacar letras brancas sobre o fundo preto */
             filter: contrast(1.05) brightness(1.03);
         }
 
@@ -443,7 +437,8 @@
         <h1 class="hero-title">Encontre o <span>tom ideal</span> para o seu espaço físico</h1>
         <p class="hero-subtitle">Mapeie as ressonâncias do seu ambiente, equilibre frentes de onda de forma psicoacústica e harmonize qualquer espaço.</p>
         
-        <a href="#" class="btn-playstore" target="_blank">
+        <!-- Link de download da Google Play Store atualizado -->
+        <a href="https://play.google.com/store/apps/details?id=com.seuapp.sinosom" class="btn-playstore" target="_blank">
             <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M3,5.27V18.73L16.55,12L3,5.27M17.87,11.33L19.5,12.16L17.87,13L16.55,12L17.87,11.33M3,3.15L17.87,10.58L3,12V3.15M3,12L17.87,13.41L3,20.85V12Z" />
             </svg>
@@ -577,7 +572,8 @@
         <div class="footer-logo">Sino<span>Som</span></div>
         <p class="footer-text">Equilíbrio, acústica e psicoacústica na ponta dos seus dedos.</p>
         
-        <a href="#" class="btn-playstore" target="_blank" style="margin-bottom: 20px;">
+        <!-- Link de download da Google Play Store atualizado no rodapé -->
+        <a href="https://play.google.com/store/apps/details?id=com.seuapp.sinosom" target="_blank" class="btn-playstore" style="margin-bottom: 20px;">
             <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M3,5.27V18.73L16.55,12L3,5.27M17.87,11.33L19.5,12.16L17.87,13L16.55,12L17.87,11.33M3,3.15L17.87,10.58L3,12V3.15M3,12L17.87,13.41L3,20.85V12Z" />
             </svg>
