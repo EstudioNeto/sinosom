@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinosom - Inteligência Acústica e Psicoacústica</title>
+    <!-- Fonte Moderna de Alta Definição -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #020b1e 0%, #061733 100%);
+            color: #f8f9fa;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: #00b4d8;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 40px auto 80px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #ffffff;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            color: #00b4d8;
+            text-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-playstore {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #ff7b00 0%, #ff9500 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 25px rgba(255, 123, 0, 0.4);
+        }
+
+        .btn-playstore:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 35px rgba(255, 123, 0, 0.6);
+        }
+
+        /* Seção Sobre */
+        .section-about {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 60px 20px;
+            background: rgba(3, 15, 38, 0.6);
+            border: 1px solid rgba(0, 180, 216, 0.15);
+            border-radius: 24px;
+        }
+
+        .grid-about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-about {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about-card h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-card h3::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: #ff7b00;
+            border-radius: 3px;
+        }
+
+        .about-card p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        /* Recursos */
+        .section-features {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ff7b00;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(3, 15, 38, 0.4);
+            border: 1px solid rgba(0, 180, 216, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #00b4d8;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h4 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #94A3B8;
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+
+        /* Depoimentos */
+        .section-testimonials {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: rgba(18, 18, 18, 0.5);
+            border: 1px solid rgba(255, 123, 0, 0.15);
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: default;
+        }
+
+        .testimonial-card:hover {
+            border-color: #ff7b00;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(255, 123, 0, 0.15);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 48px;
+            color: rgba(255, 123, 0, 0.1);
+            font-weight: 900;
+        }
+
+        .user-text {
+            color: #e2e8f0;
+            font-size: 14.5px;
+            font-style: italic;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ffffff;
+            border: 2px solid #00b4d8;
+        }
+
+        .user-avatar.avatar-amber {
+            background: #d97706;
+            border-color: #ff7b00;
+        }
+
+        .user-avatar.avatar-emerald {
+            background: #059669;
+            border-color: #10b981;
+        }
+
+        .user-details h5 {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .user-details p {
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* Capturas de Tela */
+        .section-action {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .screenshot-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        /* MOLDURAS SMARTPHONE COMPACTAS (Para aumento de Nitidez Pixel-a-Pixel) */
+        .phone-frame {
+            width: 240px; /* Reduzido para focar a resolução nos textos menores */
+            height: 490px; /* Proporção ideal de escala */
+            background: #121212; /* Cor exata de fundo do aplicativo Sinosom */
+            border: 8px solid #1c2635; /* Bezel Metálico Fino */
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
+                        0 0 25px rgba(0, 180, 216, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .phone-frame:hover {
+            transform: scale(1.03) rotate(0.5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 
+                        0 0 35px rgba(0, 180, 216, 0.3);
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 90px;
+            height: 18px;
+            background: #1c2635;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+
+        /* RENDERIZADOR DE TEXTO ULTRA-CRISP COM NITIDEZ ARTIFICIAL (SHARPENING) */
+        .phone-frame img {
+            width: 92%; /* Reduz ligeiramente a imagem interna para alinhar perfeitamente os subpixels */
+            height: 92%;
+            object-fit: contain; /* Impede qualquer estiramento que cause desfoque no texto */
+            background-color: #121212;
+            border-radius: 20px; /* Bordas arredondadas internas idênticas à tela de um celular real */
+            position: absolute;
+            z-index: 5;
+            
+            /* Força renderização direta via placa de vídeo (Hardware Accelerated) */
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            
+            /* Algoritmos de anti-aliasing focados em contraste e leitura de letras pequenas */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: auto;
+            
+            /* Filtros de Contraste e Nitidez Ativa para destacar letras brancas sobre o fundo preto */
+            filter: contrast(1.05) brightness(1.03);
+        }
+
+        .glass-glare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 50%);
+            z-index: 8;
+            pointer-events: none;
+        }
+
+        .placeholder-text {
+            color: #475569;
+            font-size: 13px;
+            padding: 24px;
+            z-index: 4;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #020b1e;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 180, 216, 0.15);
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: #00b4d8;
+        }
+
+        .footer-text {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .credits {
+            font-size: 11px;
+            color: #4b5563;
+            margin-top: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .credits span {
+            color: #ff7b00;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-area">
+            <img class="logo-img" src="logo.png" alt="Sinosom Logo" onerror="this.src='https://via.placeholder.com/50/030f26/ffffff?text=SS'">
+            <div class="logo-text">Sino<span>Som</span></div>
+        </div>
+    </header>
+
+    <!-- Apresentação Principal (Hero) -->
+    <section class="hero">
+        <h1 class="hero-title">Encontre o <span>tom ideal</span> para o seu espaço físico</h1>
+        <p class="hero-subtitle">Mapeie as ressonâncias do seu ambiente, equilibre frentes de onda de forma psicoacústica e harmonize qualquer espaço.</p>
+        
+        <a href="#" class="btn-playstore" target="_blank">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3,5.27V18.73L16.55,12L3,5.27M17.87,11.33L19.5,12.16L17.87,13L16.55,12L17.87,11.33M3,3.15L17.87,10.58L3,12V3.15M3,12L17.87,13.41L3,20.85V12Z" />
+            </svg>
+            Baixar Sinosom na Google Play
+        </a>
+    </section>
+
+    <!-- Seção de Apresentação de Conceito -->
+    <section class="section-about">
+        <div class="grid-about">
+            <div class="about-card">
+                <h3>Para que serve?</h3>
+                <p>O som se comporta de forma mecânica em ambientes fechados. Paredes rígidas paralelas criam nós acústicos, gerando o acúmulo de frequências ressonantes que geram desconforto auditivo e interferências invisíveis.</p>
+                <p>O **Sinosom** foi criado para expor esses pontos de estagnação de energia sonora, entregando ao usuário diagnósticos simples e guias de harmonização rápidos para organizar seu espaço de forma psicoacusticamente agradável.</p>
+            </div>
+            <div class="about-card">
+                <h3>Como ele ajuda você?</h3>
+                <p><strong>Em Residências:</strong> Remove o estresse oculto de som reverberante em salas de estar, quartos e escritórios, criando uma atmosfera verdadeiramente confortável para descanso.</p>
+                <p><strong>Para Lojistas (Neuromarketing):</strong> Garante que a sua playlist comercial não dispute espaço com as imperfeições físicas das suas paredes. Menos ruído significa clientes confortáveis e comprando por mais tempo.</p>
+                <p><strong>Escritórios e Consultórios:</strong> Melhora a privacidade das salas de atendimento, reduz a fadiga acústica e potencializa a clareza das reuniões.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Recursos -->
+    <section class="section-features">
+        <h2 class="section-title">Como o <span>Sinosom</span> Funciona?</h2>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <div class="feature-icon">📐</div>
+                <h4>Análise Teórica Axial</h4>
+                <p>A partir de cálculos físicos fundamentados, o app revela os pontos teóricos primários de aprisionamento de graves das suas paredes.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <h4>Monitor Passivo</h4>
+                <p>Meça a frequência dominante do ambiente em Hz através do microfone com detalhamento de notas musicais e cents de desvio.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔊</div>
+                <h4>Varredura Ativa (Sonar)</h4>
+                <p>Emita ondas de varredura acústica com suas caixas de som para mapear precisamente as deficiências físicas da estrutura.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h4>Laudo PDF Premium</h4>
+                <p>Gere relatórios acústicos detalhados em formato PDF para salvar, imprimir ou compartilhar com seu decorador ou arquiteto.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Depoimentos Dinâmicos de Usuários -->
+    <section class="section-testimonials">
+        <h2 class="section-title">O que dizem os <span>Usuários</span></h2>
+        <div class="testimonials-grid">
+            
+            <div class="testimonial-card">
+                <span class="quote-icon">“</span>
+                <p class="user-text">"Minha sala de estar parecia pesada e o som da TV ficava sempre confuso e cansativo de ouvir. Com o Sinosom eu descobri que as minhas paredes paralelas estavam gerando um acúmulo em 125 Hz. Mudei a estante de lugar e adicionei plantas nos cantos como o app sugeriu. A diferença na paz do ambiente é incrível."</p>
+                <div class="user-info">
+                    <div class="user-avatar">M</div>
+                    <div class="user-details">
+                        <h5>Mariana Silva</h5>
+                        <p>Uso Residencial - Curitiba/PR</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="quote-icon">“</span>
+                <p class="user-text">"Percebi que os clientes saíam rapidamente da minha loja de roupas. O analisador de música do Sinosom me mostrou que a playlist que eu tocava estava gerando conflito físico com a altura do teto de gesso, criando uma sensação abafada irritante. Troquei a tônica das canções e o tempo de permanência na loja aumentou."</p>
+                <div class="user-info">
+                    <div class="user-avatar avatar-amber">R</div>
+                    <div class="user-details">
+                        <h5>Roberto Neto</h5>
+                        <p>Lojista (Comércio) - São Paulo/SP</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="quote-icon">“</span>
+                <p class="user-text">"Sou arquiteta de interiores e o Sinosom virou minha ferramenta de cabeceira. Gerar os relatórios em PDF do ambiente em tempo real e entregar na mão do cliente antes de escolhermos os tecidos de cortinas e tapetes traz um nível de profissionalismo maravilhoso para o meu trabalho de consultoria."</p>
+                <div class="user-info">
+                    <div class="user-avatar avatar-emerald">A</div>
+                    <div class="user-details">
+                        <h5>Aline Santos</h5>
+                        <p>Arquiteta de Interiores - Belo Horizonte/MG</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção de Ação (Capturas de Tela) -->
+    <section class="section-action">
+        <h2 class="section-title">O Aplicativo em <span>Ação</span></h2>
+        <div class="screenshot-grid">
+            
+            <!-- Moldura 1: Ultra Definida -->
+            <div class="phone-frame">
+                <div class="glass-glare"></div>
+                <img src="foto1.png" alt="Sinosom Tela de Cálculos" onerror="this.style.display='none';">
+                <div class="placeholder-text">
+                    Coloque aqui a primeira foto (print) tirada do seu celular.<br><br>
+                    <span style="color: #00b4d8; font-size: 11px;">Nome recomendado: foto1.png</span>
+                </div>
+            </div>
+
+            <!-- Moldura 2: Ultra Definida -->
+            <div class="phone-frame">
+                <div class="glass-glare"></div>
+                <img src="foto2.png" alt="Sinosom Tela de Diagnóstico" onerror="this.style.display='none';">
+                <div class="placeholder-text">
+                    Coloque aqui a segunda foto (print) tirada do seu celular mostrando o laudo.<br><br>
+                    <span style="color: #00b4d8; font-size: 11px;">Nome recomendado: foto2.png</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-logo">Sino<span>Som</span></div>
+        <p class="footer-text">Equilíbrio, acústica e psicoacústica na ponta dos seus dedos.</p>
+        
+        <a href="#" class="btn-playstore" target="_blank" style="margin-bottom: 20px;">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3,5.27V18.73L16.55,12L3,5.27M17.87,11.33L19.5,12.16L17.87,13L16.55,12L17.87,11.33M3,3.15L17.87,10.58L3,12V3.15M3,12L17.87,13.41L3,20.85V12Z" />
+            </svg>
+            Instalar Sinosom Grátis
+        </a>
+        
+        <p class="credits">&copy; 2026 Sinosom. Todos os direitos reservados.<br>Desenvolvido por <span>Estúdio Neto - 2026</span></p>
+    </footer>
+
+</body>
+</html>
